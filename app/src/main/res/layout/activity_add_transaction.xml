@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAmount"
+                android:inputType="numberDecimal"
+                android:hint="@string/amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNote"
+                android:hint="@string/note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/spType"
+                android:hint="Tür (Gelir / Gider)"
+                android:inputType="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/spCategory"
+                android:hint="@string/category"
+                android:inputType="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDate"
+                android:focusable="false"
+                android:clickable="true"
+                android:hint="@string/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="@string/cancel"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_marginStart="8dp"
+                android:text="@string/save"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

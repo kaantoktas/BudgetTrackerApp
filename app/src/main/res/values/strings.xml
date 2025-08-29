@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BudgetTracker</string>
+    <string name="add_transaction">İşlem Ekle</string>
+    <string name="set_budget">Aylık Bütçe Ayarla</string>
+    <string name="income">Gelir</string>
+    <string name="expense">Gider</string>
+    <string name="amount">Tutar</string>
+    <string name="category">Kategori</string>
+    <string name="note">Açıklama</string>
+    <string name="save">Kaydet</string>
+    <string name="cancel">İptal</string>
+    <string name="date">Tarih</string>
+    <string name="lira">₺</string>
+</resources>

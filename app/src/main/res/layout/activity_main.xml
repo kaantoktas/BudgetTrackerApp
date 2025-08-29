@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        android:title="@string/app_name"
+        android:titleTextColor="@android:color/white"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:navigationIcon="@drawable/ic_menu_24" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Budget Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBudget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="20dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvMonth"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvBudgetStatus"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/textPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"/>
+
+                    <ProgressBar
+                        android:id="@+id/progressBudget"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="30"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="end">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSetBudget"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:text="@string/set_budget"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Chart Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Kategorilere Göre Giderler"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- List Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Son İşlemler"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/textSecondary"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Recycler -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTransactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_add_24"
+        app:tint="@android:color/white"
+        app:layout_anchorGravity="bottom|end"
+        android:contentDescription="@string/add_transaction"
+        app:layout_anchor="@id/toolbar"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
